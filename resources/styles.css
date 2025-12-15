@@ -1,0 +1,72 @@
+/* GLOBAL BACKGROUND */
+.root {
+    -fx-background-color: #1e1e2e; /* Deep dark blue */
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+/* HEADER TEXT */
+.header-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+}
+
+/* PLAYER CARDS (The boxes holding the dice) */
+.player-card {
+    -fx-background-color: #2b2b40;
+    -fx-background-radius: 20;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);
+    -fx-border-color: transparent;
+    -fx-border-width: 3;
+    -fx-border-radius: 20;
+}
+
+/* ACTIVE PLAYER GLOW EFFECT */
+.active-player {
+    -fx-border-color: #bd93f9; /* Neon Purple border */
+    -fx-effect: dropshadow(three-pass-box, rgba(189, 147, 249, 0.4), 20, 0, 0, 0);
+}
+
+/* PLAYER TEXT */
+.player-name {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #a6accd;
+}
+
+.score-text {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #50fa7b; /* Neon Green */
+}
+
+/* BUTTON STYLING */
+.action-button {
+    -fx-background-color: linear-gradient(to right, #ff79c6, #bd93f9);
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 30;
+    -fx-padding: 12 40;
+    -fx-cursor: hand;
+}
+
+.action-button:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 121, 198, 0.5), 15, 0, 0, 0);
+}
+
+.action-button:disabled {
+    -fx-opacity: 0.6;
+    -fx-background-color: #44475a;
+}
+
+/* STATUS BAR */
+.status-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #f8f8f2;
+    -fx-font-style: italic;
+}
