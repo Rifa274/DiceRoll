@@ -1,72 +1,109 @@
-/* GLOBAL BACKGROUND */
+/* GLOBAL */
 .root {
-    -fx-background-color: #1e1e2e; /* Deep dark blue */
+    -fx-background-color: radial-gradient(center 50% 50%, radius 100%, #2c2c3e, #181825);
     -fx-font-family: 'Segoe UI', sans-serif;
 }
 
-/* HEADER TEXT */
+/* --- LANDING PAGE STYLES --- */
+.game-title {
+    -fx-font-size: 54px;
+    -fx-font-weight: 900;
+    -fx-text-fill: linear-gradient(to right, #ff79c6, #bd93f9);
+    -fx-effect: dropshadow(gaussian, rgba(189, 147, 249, 0.8), 20, 0, 0, 0);
+}
+
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #50fa7b;
+    -fx-border-width: 2;
+    -fx-border-radius: 50;
+    -fx-text-fill: #50fa7b;
+    -fx-font-size: 20px;
+    -fx-padding: 10 40;
+    -fx-cursor: hand;
+    -fx-min-width: 200;
+}
+
+.menu-button:hover {
+    -fx-background-color: #50fa7b;
+    -fx-text-fill: #181825;
+    -fx-effect: dropshadow(gaussian, #50fa7b, 15, 0, 0, 0);
+}
+
+.exit-button {
+    -fx-border-color: #ff5555;
+    -fx-text-fill: #ff5555;
+}
+.exit-button:hover {
+    -fx-background-color: #ff5555;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, #ff5555, 15, 0, 0, 0);
+}
+
+/* --- GAME ROOM STYLES --- */
 .header-label {
-    -fx-font-size: 28px;
+    -fx-font-size: 24px;
+    -fx-text-fill: #f8f8f2;
+    -fx-opacity: 0.8;
+}
+
+.player-card {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 15;
+    -fx-padding: 20;
+    -fx-min-width: 150;
+    -fx-alignment: center;
+}
+
+/* NEW: Bright text for player names */
+.player-label-title {
+    -fx-font-size: 18px;
     -fx-font-weight: bold;
     -fx-text-fill: #ffffff;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+    -fx-effect: dropshadow(gaussian, black, 2, 0, 0, 0);
+    -fx-opacity: 1.0;
 }
 
-/* PLAYER CARDS (The boxes holding the dice) */
-.player-card {
-    -fx-background-color: #2b2b40;
-    -fx-background-radius: 20;
-    -fx-padding: 30;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);
-    -fx-border-color: transparent;
+/* Active Player Borders */
+.p1-active {
+    -fx-border-color: #ff79c6; /* Pink */
     -fx-border-width: 3;
-    -fx-border-radius: 20;
+    -fx-effect: dropshadow(gaussian, #ff79c6, 15, 0, 0, 0);
+}
+.p2-active {
+    -fx-border-color: #8be9fd; /* Cyan */
+    -fx-border-width: 3;
+    -fx-effect: dropshadow(gaussian, #8be9fd, 15, 0, 0, 0);
 }
 
-/* ACTIVE PLAYER GLOW EFFECT */
-.active-player {
-    -fx-border-color: #bd93f9; /* Neon Purple border */
-    -fx-effect: dropshadow(three-pass-box, rgba(189, 147, 249, 0.4), 20, 0, 0, 0);
-}
-
-/* PLAYER TEXT */
-.player-name {
-    -fx-font-size: 20px;
+.score-big {
+    -fx-font-size: 40px;
     -fx-font-weight: bold;
-    -fx-text-fill: #a6accd;
+    -fx-text-fill: white;
 }
 
-.score-text {
-    -fx-font-size: 36px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #50fa7b; /* Neon Green */
+/* THE CENTRAL DICE AREA */
+.dice-container {
+    -fx-background-color: rgba(0,0,0,0.3);
+    -fx-background-radius: 100%;
+    -fx-padding: 30;
 }
 
-/* BUTTON STYLING */
-.action-button {
+.roll-button {
     -fx-background-color: linear-gradient(to right, #ff79c6, #bd93f9);
     -fx-text-fill: white;
     -fx-font-size: 18px;
     -fx-font-weight: bold;
     -fx-background-radius: 30;
-    -fx-padding: 12 40;
+    -fx-padding: 15 50;
     -fx-cursor: hand;
 }
-
-.action-button:hover {
-    -fx-scale-x: 1.05;
-    -fx-scale-y: 1.05;
-    -fx-effect: dropshadow(three-pass-box, rgba(255, 121, 198, 0.5), 15, 0, 0, 0);
+.roll-button:disabled {
+    -fx-opacity: 0.5;
 }
 
-.action-button:disabled {
-    -fx-opacity: 0.6;
-    -fx-background-color: #44475a;
-}
-
-/* STATUS BAR */
-.status-label {
-    -fx-font-size: 16px;
-    -fx-text-fill: #f8f8f2;
+.history-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #f1fa8c; /* Yellow */
     -fx-font-style: italic;
 }
