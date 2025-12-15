@@ -1,10 +1,11 @@
-/* GLOBAL */
+/* --- GLOBAL --- */
 .root {
+    /* Your radial gradient background */
     -fx-background-color: radial-gradient(center 50% 50%, radius 100%, #2c2c3e, #181825);
     -fx-font-family: 'Segoe UI', sans-serif;
 }
 
-/* --- LANDING PAGE STYLES --- */
+/* --- LANDING PAGE STYLES (Preserved) --- */
 .game-title {
     -fx-font-size: 54px;
     -fx-font-weight: 900;
@@ -23,7 +24,6 @@
     -fx-cursor: hand;
     -fx-min-width: 200;
 }
-
 .menu-button:hover {
     -fx-background-color: #50fa7b;
     -fx-text-fill: #181825;
@@ -31,8 +31,14 @@
 }
 
 .exit-button {
+    -fx-background-color: transparent;
     -fx-border-color: #ff5555;
+    -fx-border-width: 2;
+    -fx-border-radius: 50;
     -fx-text-fill: #ff5555;
+    -fx-font-size: 18px;
+    -fx-padding: 10 30;
+    -fx-cursor: hand;
 }
 .exit-button:hover {
     -fx-background-color: #ff5555;
@@ -42,68 +48,90 @@
 
 /* --- GAME ROOM STYLES --- */
 .header-label {
-    -fx-font-size: 24px;
+    -fx-font-size: 28px;
     -fx-text-fill: #f8f8f2;
-    -fx-opacity: 0.8;
+    -fx-opacity: 0.9;
+    -fx-font-weight: bold;
 }
 
 .player-card {
     -fx-background-color: rgba(255, 255, 255, 0.05);
     -fx-background-radius: 15;
     -fx-padding: 20;
-    -fx-min-width: 150;
+    -fx-min-width: 180;
     -fx-alignment: center;
+    -fx-border-width: 3;
+    -fx-border-color: transparent; /* Invisible border by default */
 }
 
-/* NEW: Bright text for player names */
+/* Player Names */
 .player-label-title {
-    -fx-font-size: 18px;
+    -fx-font-size: 22px;
     -fx-font-weight: bold;
     -fx-text-fill: #ffffff;
     -fx-effect: dropshadow(gaussian, black, 2, 0, 0, 0);
-    -fx-opacity: 1.0;
 }
 
-/* Active Player Borders */
+/* Scores */
+.score-big {
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+/* Active Player Borders (Matches your P1 Pink / P2 Cyan scheme) */
 .p1-active {
     -fx-border-color: #ff79c6; /* Pink */
-    -fx-border-width: 3;
-    -fx-effect: dropshadow(gaussian, #ff79c6, 15, 0, 0, 0);
+    -fx-effect: dropshadow(gaussian, #ff79c6, 20, 0, 0, 0);
 }
 .p2-active {
     -fx-border-color: #8be9fd; /* Cyan */
-    -fx-border-width: 3;
-    -fx-effect: dropshadow(gaussian, #8be9fd, 15, 0, 0, 0);
+    -fx-effect: dropshadow(gaussian, #8be9fd, 20, 0, 0, 0);
 }
 
-.score-big {
-    -fx-font-size: 40px;
-    -fx-font-weight: bold;
-    -fx-text-fill: white;
-}
-
-/* THE CENTRAL DICE AREA */
+/* DICE AREA */
 .dice-container {
-    -fx-background-color: rgba(0,0,0,0.3);
-    -fx-background-radius: 100%;
+    -fx-background-color: rgba(0,0,0,0.2);
+    -fx-background-radius: 100%; /* Circle background */
     -fx-padding: 30;
-}
-
-.roll-button {
-    -fx-background-color: linear-gradient(to right, #ff79c6, #bd93f9);
-    -fx-text-fill: white;
-    -fx-font-size: 18px;
-    -fx-font-weight: bold;
-    -fx-background-radius: 30;
-    -fx-padding: 15 50;
-    -fx-cursor: hand;
-}
-.roll-button:disabled {
-    -fx-opacity: 0.5;
+    -fx-alignment: center;
 }
 
 .history-label {
-    -fx-font-size: 14px;
+    -fx-font-size: 18px;
     -fx-text-fill: #f1fa8c; /* Yellow */
-    -fx-font-style: italic;
+    -fx-font-weight: bold;
+}
+
+/* ROLL BUTTON */
+.roll-button {
+    -fx-background-color: linear-gradient(to right, #ff79c6, #bd93f9);
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 30;
+    -fx-padding: 12 50;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0, 0, 5);
+}
+.roll-button:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+.roll-button:disabled {
+    -fx-opacity: 0.5;
+    -fx-cursor: default;
+}
+
+/* --- GAME OVER OVERLAY (Added to match your theme) --- */
+.game-over-overlay {
+    -fx-background-color: rgba(0, 0, 0, 0.9);
+    -fx-alignment: center;
+}
+
+.winner-text {
+    -fx-font-size: 60px;
+    -fx-font-weight: 900;
+    -fx-text-fill: gold;
+    -fx-effect: dropshadow(three-pass-box, gold, 30, 0, 0, 0);
 }
